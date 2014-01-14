@@ -14,3 +14,8 @@ study
 ##2014.1.9##
 - 增加了easyui的代码
 
+##2014.1.14##
+
+ - 增加rss的阅读器 ![编辑图片][1]
+
+ [1]:https://github.com/Willam2004/study/blob/master/js/easyui/icons/back.png?raw=true

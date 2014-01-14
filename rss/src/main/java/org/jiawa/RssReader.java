@@ -1,5 +1,10 @@
 package org.jiawa;
 
+import com.sun.syndication.feed.synd.SyndEntry;
+import com.sun.syndication.feed.synd.SyndFeed;
+import com.sun.syndication.io.SyndFeedInput;
+import com.sun.syndication.io.XmlReader;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -16,24 +21,22 @@ import java.util.List;
 public class RssReader {
 
     public static void main(String[] args) {
-
+        RssReader rssReader = new RssReader();
+        rssReader.readFromUrl("http://coolshell.cn/feed");
     }
 
     public List<RssItemBean> readFromUrl(String url) {
         try{
             URL content = new URL(url);
-            InputStream is =
-                    content.openStream();
+            SyndFeedInput input = new SyndFeedInput();
+            SyndFeed feed = input.build(new XmlReader(content));
+            List list =feed.getEntries();
+            SyndEntry syndEntry = (SyndEntry) list.get(0);
 
-            BufferedReader br
-                    = new BufferedReader(new InputStreamReader(is));
-            StringBuilder sb = new StringBuilder();
-            String r = br.readLine();
-            while (r != null) {
-                sb.append(r);
-                r = br.readLine();
-            }
-            System.out.println(sb.toString());
+            System.out.println(list.get(0));
+//            for (int i = 0; i < list.size(); i++) {
+//                System.out.println(list.get(i));
+//            }
         }catch (Exception e){
 
         }

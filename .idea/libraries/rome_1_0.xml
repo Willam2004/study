@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="rome-1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/rss/lib/rome-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/rome-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
